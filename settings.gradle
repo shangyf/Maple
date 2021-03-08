@@ -1,0 +1,3 @@
+include ':Basic'
+include ':app'
+rootProject.name = "Maple"
