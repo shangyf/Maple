@@ -1,4 +1,4 @@
-include ':net'
-include ':common'
+include ':library:net'
+include ':library:common'
 include ':app'
 rootProject.name = "Maple"
