@@ -44,6 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'com.github.shangyf:Maple:1.0.3'
-    //implementation project(path: ':Basic')
+    //implementation 'com.github.shangyf:Maple:1.0.3'
+    implementation project(path: ':library:common')
+
 }
