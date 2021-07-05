@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission">没有此权限，无法开启这个功能，请开启%1s权限。是否前往设置</string>
+</resources>

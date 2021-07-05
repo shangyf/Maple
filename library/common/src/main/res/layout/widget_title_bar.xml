@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_bg_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/crimson"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:layout_marginTop="@dimen/title_height_offset">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/title_height"
+            android:layout_height="@dimen/title_height"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/title_height"
+            android:layout_marginRight="@dimen/title_height"
+            android:gravity="center"
+            android:text="标题"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_height"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|right"
+            android:paddingRight="@dimen/dimen_12dp"
+            android:text="副标题"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_14sp" />
+    </RelativeLayout>
+</LinearLayout>

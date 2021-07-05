@@ -46,7 +46,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //BaseRecyclerViewAdapterHelper
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
     //log打印
-    implementation 'com.github.zhaokaiqiang.klog:library:1.6.0'
+    api 'com.github.zhaokaiqiang.klog:library:1.6.0'
 }
