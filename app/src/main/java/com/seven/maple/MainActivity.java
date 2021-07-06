@@ -8,7 +8,7 @@ import com.seven.common.act.BaseActivity;
 public class MainActivity extends BaseActivity {
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.activity_main;
     }
 
     @Override
