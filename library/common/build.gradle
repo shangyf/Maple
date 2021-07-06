@@ -49,4 +49,7 @@ dependencies {
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
     //log打印
     api 'com.github.zhaokaiqiang.klog:library:1.6.0'
+    //butterknife
+    api 'com.jakewharton:butterknife:10.2.0'
+    //annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 }

@@ -1,6 +1,7 @@
 package com.seven.common.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
@@ -27,20 +28,24 @@ public class TitleBar extends LinearLayout {
     private String rightTitle;
 
     public TitleBar(Context context) {
-        this(context,null,0);
+        this(context, null, 0);
     }
 
     public TitleBar(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public TitleBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        init(context,attrs);
+        init(context, attrs);
     }
 
-    public void init(Context context,@Nullable AttributeSet attrs){
-        LayoutInflater.from(context).inflate(R.layout.widget_title_bar,this);
+    public void init(Context context, @Nullable AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TitleBar);
+        title = ta.getString(R.styleable.TitleBar_title);
+
+
+        LayoutInflater.from(context).inflate(R.layout.widget_title_bar, this);
     }
 }

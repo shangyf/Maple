@@ -2,15 +2,20 @@
 <resources>
     <!--标题-->
     <attr name="title" format="string|reference" />
-    <attr name="titleColor" format="color" />
-    <attr name="titleSize" format="dimension" />
+    <attr name="titleColor" format="color|reference" />
+    <!--integer-->
+    <attr name="titleSize" format="integer" />
     <attr name="bgTitle" format="color" />
     <!--右边的按钮-->
     <attr name="rightTitle" format="string|reference" />
-    <attr name="rightColor" format="color" />
-    <attr name="rightSize" format="dimension" />
+    <attr name="rightColor" format="color|reference" />
+    <attr name="rightSize" format="integer" />
     <!--返回按钮-->
     <attr name="backArrow" format="reference" />
+    <!--是否显示左边-->
+    <attr name="isShowLeft" format="boolean" />
+    <!--是否显示右边-->
+    <attr name="isShowRight" format="boolean" />
 
     <!--标题-->
     <declare-styleable name="TitleBar">
@@ -22,6 +27,8 @@
         <attr name="rightSize" />
         <attr name="backArrow" />
         <attr name="bgTitle" />
+        <attr name="isShowLeft"/>
+        <attr name="isShowRight"/>
     </declare-styleable>
 
     <!--设置-->

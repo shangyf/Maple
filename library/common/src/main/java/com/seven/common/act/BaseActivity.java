@@ -12,22 +12,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.seven.common.utils.status.SystemStatusManager;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by SeVen on 3/8/21 9:56 AM
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
+    Unbinder unbinder = null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTranslucentStatus();
 
+        unbinder = ButterKnife.bind(this);
+
         View rootView = onCreateDataBinding();
         if (null == rootView) {
             setContentView(getLayoutId());
         } else {
             setContentView(rootView);
+        }
+
+        try {
+            init();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
         }
     }
 
@@ -55,4 +67,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         tintManager.setStatusBarTintResource(0);//状态栏无背景
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (unbinder != null) {
+            unbinder.unbind();
+        }
+    }
 }
