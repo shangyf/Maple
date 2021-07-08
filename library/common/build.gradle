@@ -49,4 +49,8 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
     //log打印
     implementation 'com.github.zhaokaiqiang.klog:library:1.6.0'
+    //加载进度条
+    implementation 'com.kaopiz:kprogresshud:1.2.0'
+    //分包 65535
+    implementation 'androidx.multidex:multidex:2.0.0'
 }
