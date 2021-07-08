@@ -16,9 +16,15 @@
     <attr name="isShowLeft" format="boolean" />
     <!--是否显示右边-->
     <attr name="isShowRight" format="boolean" />
+    <!--是否显示顶部的线条-->
+    <attr name="isShowTopLine" format="boolean" />
+    <!--是否显示底部的线条-->
+    <attr name="isShowBottomLine" format="boolean" />
+    <!--左边的图片-->
+    <attr name="leftImage" format="reference" />
 
     <!--标题-->
-    <declare-styleable name="TitleBar">
+    <declare-styleable name="TitleBarView">
         <attr name="title" />
         <attr name="titleColor" />
         <attr name="titleSize" />
@@ -27,12 +33,22 @@
         <attr name="rightSize" />
         <attr name="backArrow" />
         <attr name="bgTitle" />
-        <attr name="isShowLeft"/>
-        <attr name="isShowRight"/>
+        <attr name="isShowLeft" />
+        <attr name="isShowRight" />
     </declare-styleable>
 
     <!--设置-->
     <declare-styleable name="SettingView">
+        <attr name="title" />
+        <attr name="titleSize" />
+        <attr name="titleColor" />
+        <!--右边提示语-->
+        <attr name="rightTitle" />
+        <attr name="rightColor" />
+        <attr name="rightSize" />
 
+        <attr name="leftImage" />
+        <attr name="isShowTopLine" />
+        <attr name="isShowBottomLine" />
     </declare-styleable>
 </resources>
