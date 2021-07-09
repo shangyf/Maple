@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id "com.github.dcendents.android-maven"
+}
+group {
+    id 'com.github.shangyf'
 }
 
 android {
@@ -33,7 +37,6 @@ android {
 }
 
 dependencies {
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -41,4 +44,12 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.5'
+    //log拦截器
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.0'
 }
