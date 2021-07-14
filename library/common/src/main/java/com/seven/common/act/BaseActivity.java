@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kaopiz.kprogresshud.KProgressHUD;
 import com.seven.common.utils.status.SystemStatusManager;
 
 /**
@@ -17,6 +18,7 @@ import com.seven.common.utils.status.SystemStatusManager;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
+    private KProgressHUD kProgressHUD;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,5 +61,26 @@ public abstract class BaseActivity extends AppCompatActivity {
         SystemStatusManager tintManager = new SystemStatusManager(this);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setStatusBarTintResource(0);//状态栏无背景
+    }
+
+    /**
+     * 显示加载进度条
+     */
+    public void showLoading(String msg) {
+        if (kProgressHUD == null) {
+            kProgressHUD = KProgressHUD.create(this);
+            kProgressHUD.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE);
+            kProgressHUD.setCancellable(true);
+            kProgressHUD.setAnimationSpeed(2);
+            kProgressHUD.setDimAmount(0.5f);
+        }
+        kProgressHUD.setDetailsLabel(msg);
+        kProgressHUD.show();
+    }
+
+    public void cancelLoading() {
+        if (kProgressHUD != null && kProgressHUD.isShowing()) {
+            kProgressHUD.dismiss();
+        }
     }
 }

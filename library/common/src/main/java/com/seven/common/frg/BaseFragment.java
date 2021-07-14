@@ -98,6 +98,7 @@ public abstract class BaseFragment extends Fragment {
      * @param arguments
      */
     protected void handlerArguments(Bundle arguments) {
+
     }
 
     /**
