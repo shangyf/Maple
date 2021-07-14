@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 
 import com.kaopiz.kprogresshud.KProgressHUD;
+import com.seven.common.utils.ToastUtil;
 
 /**
  * Created by SeVen on 3/8/21 9:58 AM
@@ -26,6 +28,8 @@ public abstract class BaseFragment extends Fragment {
     protected Bundle savedInstanceState;
 
     protected Context mContext;
+
+    private boolean hidden;
 
 
     //获取布局文件ID
@@ -68,6 +72,23 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void init() throws Exception;
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        this.hidden = hidden;
+        if (!hidden) {
+            onRefresh();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!hidden) {
+            onRefresh();
+        }
+    }
+
 
     public View findViewById(int resId) {
         if (contentView == null) {
@@ -101,6 +122,35 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
+
+    /**
+     * 刷新
+     */
+    public void onRefresh() {
+        request();
+    }
+
+
+    /**
+     * 请求
+     */
+    public void request() {
+    }
+
+    /**
+     * 请求数据失败
+     */
+    public void onSuccess() {
+        cancelLoading();
+    }
+
+    /**
+     * 请求数据成功
+     */
+    public void onFailure(String msg) {
+        cancelLoading();
+    }
+
     /**
      * 显示加载进度条
      */
@@ -120,5 +170,21 @@ public abstract class BaseFragment extends Fragment {
         if (kProgressHUD != null && kProgressHUD.isShowing()) {
             kProgressHUD.dismiss();
         }
+    }
+
+    /**
+     * toast成功数据
+     */
+    public void showToastSuccess(String msg) {
+        ToastUtil.showToast(getContext(), msg, ToastUtil.ToastType.SUCCESS);
+    }
+
+    /**
+     * toast失败消息
+     *
+     * @param msg
+     */
+    public void showToastFailure(String msg) {
+        ToastUtil.showToast(getContext(), msg, ToastUtil.ToastType.FAILURE);
     }
 }

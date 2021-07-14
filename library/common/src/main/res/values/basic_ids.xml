@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="list_recycle" type="id"></item>
+    <item name="smart_refresh" type="id"></item>
+    <item name="stub_view" type="id"></item>
+    <item name="tv_error" type="id"></item>
+    <item name="iv_error" type="id"></item>
 </resources>
